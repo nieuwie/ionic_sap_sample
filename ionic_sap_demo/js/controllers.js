@@ -2,13 +2,15 @@ angular.module('starter.controllers', [])
 
 .controller('TasksCtrl', function($scope, $state, $http, $ionicLoading, Tasks) {
 	
-	
+	// success callback from cache
 	$scope.fromCache = function(tasks)
 	{
 		$scope.tasks = tasks;
 		$scope.$broadcast('scroll.refreshComplete');
 		$ionicLoading.hide();
 	},
+	
+	// success callback from server
 	$scope.success = function(data)
 	{
 		var tasks = data.d.results;
@@ -32,6 +34,8 @@ angular.module('starter.controllers', [])
 		// Hide pull to refresh
 		$scope.$broadcast('scroll.refreshComplete');
 	}
+	
+	// error callback
 	$scope.error = function(){
 		$ionicLoading.hide();
 		alert('error while loading tasks');
