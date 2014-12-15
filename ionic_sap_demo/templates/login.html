@@ -1,0 +1,18 @@
+<ion-view title="Login">
+  <ion-content class="padding">
+		<img src="img/logo.png" width="70%" class="logo"/>
+		<div class="list">
+  <label class="item item-input item-stacked-label">
+    <span class="input-label">Username</span>
+    <input type="text" placeholder="Username" ng-model="loginData.username">
+  </label>
+  <label class="item item-input item-stacked-label">
+    <span class="input-label">Password</span>
+    <input type="password" placeholder="Password" ng-model="loginData.password">
+  </label>
+</div>
+<button class="button button-full button-positive" ng-click="login()">
+  Login
+</button>
+  </ion-content>
+</ion-view>

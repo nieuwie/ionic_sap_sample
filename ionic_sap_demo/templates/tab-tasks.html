@@ -1,0 +1,19 @@
+<ion-view title="Tasks"> 
+<ion-nav-buttons side="right">
+<button class="button button-clear" ng-click="logout()">Logout</button>
+</ion-nav-buttons>
+<ion-content> 
+<ion-refresher
+	pulling-text="Pull to refresh..." on-refresh="doRefresh()">
+</ion-refresher>
+<div class="list">
+
+	<a ng-repeat="task in tasks" class="item item-icon-left"
+		href="#/tab/task/{{$index}}"> <i class="icon ion-archive balanced"></i>
+		<h3>{{task.subject}}</h3>
+		<p>{{task.Detail1}}, {{task.Detail2}}</p>
+	</a>
+
+</div>
+</ion-content>
+</ion-view>
