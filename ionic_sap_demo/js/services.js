@@ -11,10 +11,12 @@ angular.module('starter.services', [])
   
   return {
 	login : function(logindata,successCallback,errorCallback){
-
+		
+		// Basic authentication header
 		var auth = btoa(logindata.username+":"+logindata.password);
 		$http.defaults.headers.common.Authorization = 'Basic ' + auth;
 		
+		// Get count of tasks to do authentication
 		$http.get(serviceURL+'/WorkflowTaskCollection/$count')
 			.success(successCallback).error(errorCallback);
 		
