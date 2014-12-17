@@ -49,7 +49,7 @@ angular.module('starter.controllers', [])
 
 	// refresh function
 	$scope.doRefresh = function(){
-		Tasks.all($http,true,$scope.success,$scope.error);
+		Tasks.all(true,$scope.success,$scope.error);
 	}
 	
 	// mock logout, just go to login screen
